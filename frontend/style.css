@@ -1,0 +1,101 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styles */
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1000px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Controls */
+.controls {
+    margin-bottom: 20px;
+}
+
+button, select {
+    padding: 10px;
+    margin: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, select:hover {
+    background-color: #f0f0f0;
+}
+
+button:active, select:active {
+    background-color: #e0e0e0;
+}
+
+/* Array container */
+.array-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2px;
+    margin-top: 30px;
+    height: 400px;  /* Maximum height for the bars */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Bar styling */
+.bar {
+    width: 20px;
+    background-color: #3498db;
+    transition: height 0.1s ease-in-out;
+    border-radius: 3px;
+}
+
+.bar.selected {
+    background-color: #e74c3c;  /* Highlight selected bars */
+}
+
+/* Hover effect on bars */
+.bar:hover {
+    background-color: #2ecc71;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .array-container {
+        height: 300px;
+    }
+
+    .bar {
+        width: 15px;
+    }
+
+    button, select {
+        font-size: 0.9rem;
+    }
+}
