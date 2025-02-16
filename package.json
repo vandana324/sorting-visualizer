@@ -1,0 +1,26 @@
+{
+  "name": "sorting-visualizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vandana324/sorting-visualizer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vandana324/sorting-visualizer/issues"
+  },
+  "homepage": "https://github.com/vandana324/sorting-visualizer#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@ljharb/tsconfig": "^0.2.3"
+  }
+}
