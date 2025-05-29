@@ -1,6 +1,6 @@
 let array = [];
-let isSorting = false; // Sorting state
-let stopSorting = false; // Stop flag
+let isSorting = false; 
+let stopSorting = false; 
 
 
 const algorithmSelect = document.getElementById('algorithm');
@@ -30,13 +30,13 @@ toggleThemeBtn.addEventListener('click', () => {
 
 const speedSlider = document.getElementById('speedRange');
 
-let animationSpeed = 50; // default speed value
+let animationSpeed = 50; 
 
 speedSlider.addEventListener('input', () => {
-    animationSpeed = 101 - parseInt(speedSlider.value); // invert so slider up = faster
+    animationSpeed = 101 - parseInt(speedSlider.value); 
     console.log('Animation speed set to:', animationSpeed);
     
-    // Use animationSpeed in your sorting animation delay
+
 });
 
 
@@ -49,10 +49,10 @@ function generateArray(size = 30) {
     visualizeArray(array);
 }
 
-// Visualize the array as bars
+
 function visualizeArray(arr) {
     const container = document.getElementById('array-container');
-    container.innerHTML = ''; // Clear existing bars
+    container.innerHTML = ''; 
 
     arr.forEach(value => {
         const bar = document.createElement('div');
@@ -64,7 +64,7 @@ function visualizeArray(arr) {
 
 // Start sorting
 async function startSorting() {
-    if (isSorting) return; // Prevent multiple starts
+    if (isSorting) return; 
     isSorting = true;
     stopSorting = false;
 
@@ -85,7 +85,6 @@ async function startSorting() {
     isSorting = false;
 }
 
-// Stop sorting
 function stopSortingProcess() {
     stopSorting = true;
 }
@@ -104,7 +103,7 @@ async function bubbleSort(arr) {
             if (arr[j] > arr[j + 1]) {
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
                 visualizeArray(arr);
-                bars = document.querySelectorAll('.bar'); // Refresh bars
+                bars = document.querySelectorAll('.bar'); 
             }
 
             await new Promise(resolve => setTimeout(resolve, animationSpeed));
@@ -141,7 +140,7 @@ async function selectionSort(arr) {
         if (minIndex !== i) {
             [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
             visualizeArray(arr);
-            bars = document.querySelectorAll('.bar'); // Refresh bars
+            bars = document.querySelectorAll('.bar'); 
         }
     }
 }
@@ -179,7 +178,7 @@ async function quickSort(arr, low, high) {
     }
 }
 
-// Partition for Quick Sort
+//  Quick Sort
 async function partition(arr, low, high) {
     let pivot = arr[high];
     let i = low - 1;
@@ -202,7 +201,7 @@ async function partition(arr, low, high) {
     return i + 1;
 }
 
-// Merge Sort Algorithm
+// Merge Sort
 async function mergeSort(arr, left, right) {
     if (left >= right) return;
 
@@ -212,7 +211,7 @@ async function mergeSort(arr, left, right) {
     await merge(arr, left, mid, right);
 }
 
-// Merge for Merge Sort
+
 async function merge(arr, left, mid, right) {
     let bars = document.querySelectorAll('.bar');
     let n1 = mid - left + 1;
@@ -260,5 +259,6 @@ document.getElementById('stopBtn').addEventListener('click', stopSortingProcess)
 document.getElementById('resetBtn').addEventListener('click', () => {
     generateArray();
 });
-// Generate initial array
+
+
 generateArray();

@@ -1,4 +1,4 @@
-/* General styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,6 @@ body {
     height: 100vh;
 }
 
-/* Container styles */
 .container {
     text-align: center;
     width: 80%;
@@ -27,7 +26,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Controls */
+
 .controls {
     margin-bottom: 20px;
 }
@@ -51,21 +50,21 @@ button:active, select:active {
     background-color: #e0e0e0;
 }
 
-/* Array container */
+
 .array-container {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     gap: 2px;
     margin-top: 30px;
-    height: 400px;  /* Maximum height for the bars */
+    height: 400px;  
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
 }
 
-/* Bar styling */
+
 .bar {
     width: 20px;
     background-color: #3498db;
@@ -74,16 +73,16 @@ button:active, select:active {
 }
 
 .bar.selected {
-    background-color: #e74c3c;  /* Highlight selected bars */
+    background-color: #e74c3c;  
 }
 
-/* Hover effect on bars */
+
 .bar:hover {
     background-color: #2ecc71;
 }
 
 
-/* Algorithm Description */
+
 .description {
     background-color: #ffffff;
     padding: 20px;
@@ -106,7 +105,7 @@ button:active, select:active {
     color: #333;
 }
 
-/* Responsive description */
+
 @media screen and (max-width: 768px) {
     .description {
         padding: 15px;
@@ -118,7 +117,7 @@ button:active, select:active {
     }
 }
 
-/* Responsive design */
+
 @media screen and (max-width: 768px) {
     .container {
         width: 90%;
@@ -138,7 +137,7 @@ button:active, select:active {
 }
 
 
-/* Dark Mode */
+
 body.dark {
     background-color: #000000;
     color: #f1f1f1;
@@ -213,21 +212,21 @@ body.dark .description p {
     margin-bottom: 10px;
     font-size: 0.9rem;
     color: #333;
-    writing-mode: vertical-rl; /* To show label vertically */
-    transform: rotate(180deg); /* Rotate text so it reads bottom to top */
+    writing-mode: vertical-rl; 
+    transform: rotate(180deg); 
     cursor: default;
 }
 
 #speedRange {
     appearance: slider-vertical;
     -webkit-appearance: slider-vertical;
-    width: 200px;       /* Height badha diya slider ka */
-    height: 40px;       /* Width thoda badhaya handle ke liye */
-    writing-mode: bt-lr; /* vertical orientation */
+    width: 200px;      
+    height: 40px;      
+    writing-mode: bt-lr; 
     cursor: pointer;
 }
 
-/* Slider thumb (handle) ko bada karne ke liye */
+
 #speedRange::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -237,7 +236,7 @@ body.dark .description p {
     border-radius: 50%;
     cursor: pointer;
     border: 1px solid #2980b9;
-    margin-left: -8px; /* adjust position */
+    margin-left: -8px; 
 }
 
 #speedRange::-moz-range-thumb {
