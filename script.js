@@ -2,6 +2,44 @@ let array = [];
 let isSorting = false; // Sorting state
 let stopSorting = false; // Stop flag
 
+
+const algorithmSelect = document.getElementById('algorithm');
+const algoText = document.getElementById('algo-text');
+
+const descriptions = {
+    "Bubble Sort": "Bubble Sort repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. Time Complexity: O(n²).",
+    "Selection Sort": "Selection Sort selects the smallest (or largest) element from the unsorted part and swaps it with the element at the beginning. Time Complexity: O(n²).",
+    "Insertion Sort": "Insertion Sort builds the sorted array one element at a time by inserting each element into its correct position. Time Complexity: O(n²).",
+    "Quick Sort": "Quick Sort uses a divide-and-conquer strategy to partition the array and recursively sort the partitions. Average Time Complexity: O(n log n).",
+    "Merge Sort": "Merge Sort divides the array into halves, sorts them and merges them back. It is stable and efficient. Time Complexity: O(n log n)."
+};
+
+algorithmSelect.addEventListener('change', () => {
+    const selectedAlgo = algorithmSelect.value;
+    algoText.textContent = descriptions[selectedAlgo] || "Select a sorting algorithm to see how it works here.";
+});
+
+
+const toggleThemeBtn = document.getElementById('toggleThemeBtn');
+
+toggleThemeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    toggleThemeBtn.textContent = 
+        document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+});
+
+const speedSlider = document.getElementById('speedRange');
+
+let animationSpeed = 50; // default speed value
+
+speedSlider.addEventListener('input', () => {
+    animationSpeed = 101 - parseInt(speedSlider.value); // invert so slider up = faster
+    console.log('Animation speed set to:', animationSpeed);
+    
+    // Use animationSpeed in your sorting animation delay
+});
+
+
 // Generate a random array
 function generateArray(size = 30) {
     array = [];
@@ -69,7 +107,8 @@ async function bubbleSort(arr) {
                 bars = document.querySelectorAll('.bar'); // Refresh bars
             }
 
-            await new Promise(resolve => setTimeout(resolve, 150));
+            await new Promise(resolve => setTimeout(resolve, animationSpeed));
+
             bars[j].classList.remove('selected');
             bars[j + 1].classList.remove('selected');
         }
@@ -93,7 +132,8 @@ async function selectionSort(arr) {
                 minIndex = j;
             }
 
-            await new Promise(resolve => setTimeout(resolve, 150));
+          await new Promise(resolve => setTimeout(resolve, animationSpeed));
+
             bars[j].classList.remove('selected');
             bars[minIndex].classList.remove('selected');
         }
@@ -122,7 +162,8 @@ async function insertionSort(arr) {
 
             visualizeArray(arr);
             bars = document.querySelectorAll('.bar');
-            await new Promise(resolve => setTimeout(resolve, 150));
+          await new Promise(resolve => setTimeout(resolve, animationSpeed));
+
         }
         arr[j + 1] = key;
         visualizeArray(arr);
@@ -152,7 +193,8 @@ async function partition(arr, low, high) {
             [arr[i], arr[j]] = [arr[j], arr[i]];
             visualizeArray(arr);
             bars = document.querySelectorAll('.bar');
-            await new Promise(resolve => setTimeout(resolve, 150));
+          await new Promise(resolve => setTimeout(resolve, animationSpeed));
+
         }
     }
     [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
@@ -191,21 +233,24 @@ async function merge(arr, left, mid, right) {
         }
         visualizeArray(arr);
         bars = document.querySelectorAll('.bar');
-        await new Promise(resolve => setTimeout(resolve, 150));
+        await new Promise(resolve => setTimeout(resolve, animationSpeed));
+
     }
 
     while (i < n1) {
         arr[k++] = leftArr[i++];
         visualizeArray(arr);
         bars = document.querySelectorAll('.bar');
-        await new Promise(resolve => setTimeout(resolve, 150));
+      await new Promise(resolve => setTimeout(resolve, animationSpeed));
+
     }
 
     while (j < n2) {
         arr[k++] = rightArr[j++];
         visualizeArray(arr);
         bars = document.querySelectorAll('.bar');
-        await new Promise(resolve => setTimeout(resolve, 150));
+       await new Promise(resolve => setTimeout(resolve, animationSpeed));
+
     }
 }
 

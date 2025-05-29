@@ -19,8 +19,21 @@
             </select>
             <button id="startBtn">Start</button>
             <button id="stopBtn">Stop</button>
-            <button id="resetBtn">Reset Array</button> <!-- New Reset button -->
+            <button id="resetBtn">Reset Array</button>
+             <button id="toggleThemeBtn">Toggle Dark Mode</button> <!-- New Reset button -->
         </div>
+
+         <div id="description" class="description">
+            <h2>Algorithm Description</h2>
+            <p id="algo-text">Select a sorting algorithm to see how it works here.</p>
+        </div>
+
+
+        <div class="speed-control-container">
+  <label for="speedRange" class="speed-label">Speed</label>
+  <input type="range" id="speedRange" min="1" max="100" value="50" step="1" orient="vertical">
+</div>
+
         <div id="array-container" class="array-container"></div>
     </div>
     <script src="script.js"></script>

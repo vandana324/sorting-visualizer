@@ -19,6 +19,7 @@ body {
     text-align: center;
     width: 80%;
     max-width: 1000px;
+    position: relative;
 }
 
 h1 {
@@ -81,6 +82,42 @@ button:active, select:active {
     background-color: #2ecc71;
 }
 
+
+/* Algorithm Description */
+.description {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 30px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.description h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Responsive description */
+@media screen and (max-width: 768px) {
+    .description {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .description h2 {
+        font-size: 1.3rem;
+    }
+}
+
 /* Responsive design */
 @media screen and (max-width: 768px) {
     .container {
@@ -99,3 +136,117 @@ button:active, select:active {
         font-size: 0.9rem;
     }
 }
+
+
+/* Dark Mode */
+body.dark {
+    background-color: #000000;
+    color: #f1f1f1;
+}
+
+body.dark .container {
+    background-color: #000000;
+}
+
+body.dark button,
+body.dark select {
+    background-color: #333;
+    color: #f1f1f1;
+    border: 1px solid #555;
+}
+
+body.dark button:hover,
+body.dark select:hover {
+    background-color: #444;
+}
+
+body.dark button:active,
+body.dark select:active {
+    background-color: #555;
+}
+
+body.dark .array-container {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
+
+body.dark .bar {
+    background-color: #5dade2;
+}
+
+body.dark .bar.selected {
+    background-color: #e74c3c;
+}
+
+body.dark .description {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+body.dark .description h2,
+body.dark .description p {
+    color: #f1f1f1;
+}
+
+
+.speed-control-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50px;
+    height: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    user-select: none;
+    z-index: 1000;
+}
+
+.speed-control-container .speed-label {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    writing-mode: vertical-rl; /* To show label vertically */
+    transform: rotate(180deg); /* Rotate text so it reads bottom to top */
+    cursor: default;
+}
+
+#speedRange {
+    appearance: slider-vertical;
+    -webkit-appearance: slider-vertical;
+    width: 200px;       /* Height badha diya slider ka */
+    height: 40px;       /* Width thoda badhaya handle ke liye */
+    writing-mode: bt-lr; /* vertical orientation */
+    cursor: pointer;
+}
+
+/* Slider thumb (handle) ko bada karne ke liye */
+#speedRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #2980b9;
+    margin-left: -8px; /* adjust position */
+}
+
+#speedRange::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #3498db;
+    border-radius: 50%;
+    border: 1px solid #2980b9;
+    cursor: pointer;
+}
+
+
